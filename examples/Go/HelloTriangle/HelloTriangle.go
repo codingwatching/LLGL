@@ -120,9 +120,9 @@ func main() {
 		cmdBuffer.BeginRenderPass(swapChain)
 
 		resolution := swapChain.GetResolution()
-		cmdBuffer.Clear(llgl.ClearColor, llgl.ClearValue{ Color: [4]float32{ 0.1, 0.1, 0.2, 1.0} })
 		cmdBuffer.SetPipelineState(pso)
 		cmdBuffer.SetViewport(llgl.Viewport{ X: 0.0, Y: 0.0, Width: float32(resolution.Width), Height: float32(resolution.Height), MinDepth: 0.0, MaxDepth: 1.0 })
+		cmdBuffer.Clear(llgl.ClearColor, llgl.ClearValue{ Color: [4]float32{ 0.1, 0.1, 0.2, 1.0} })
 
 		cmdBuffer.SetVertexBuffer(vertexBuffer)
 		cmdBuffer.Draw(3, 0)

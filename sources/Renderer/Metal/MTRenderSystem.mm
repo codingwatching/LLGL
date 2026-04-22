@@ -382,7 +382,7 @@ void MTRenderSystem::CreateDeviceResources(long renderSystemFlags, id<MTLDevice>
 {
     if (sharedDevice != nil)
     {
-        /* Take shard Metal device and increment reference counter */
+        /* Take shared Metal device and increment reference counter */
         device_ = [sharedDevice retain];
     }
     else

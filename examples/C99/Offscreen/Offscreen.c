@@ -291,7 +291,7 @@ int ExampleInit()
         // Set vertex buffer
         llglSetVertexBuffer(vertexBuffer);
 
-        // Set the swap-chain as the initial render target
+        // Start render pass that draws into the render target
         llglBeginRenderPass(renderTarget);
         {
             // Clear color buffer

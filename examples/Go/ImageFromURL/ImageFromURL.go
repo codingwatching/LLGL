@@ -62,7 +62,7 @@ func LoadTextureFromURL(url string) (llgl.Texture, int, int) {
 				Type:		llgl.TextureTypeTexture2D,
 				BindFlags:	llgl.BindSampled | llgl.BindColorAttachment,
 				Format:		llgl.FormatRGBA8UNorm,
-				Extent:		llgl.Extent3D{ 1, 1, 1 },
+				Extent:		llgl.Extent3D{ Width: 1, Height: 1, Depth: 1 },
 			},
 			nil,
 		),
@@ -83,7 +83,7 @@ func LoadTextureFromURL(url string) (llgl.Texture, int, int) {
 				BindFlags:	llgl.BindSampled | llgl.BindColorAttachment,
 				MiscFlags:	llgl.MiscGenerateMips,
 				Format:		llgl.FormatRGBA8UNorm,
-				Extent:		llgl.Extent3D{ imgWidth, imgHeight, 1 },
+				Extent:		llgl.Extent3D{ Width: imgWidth, Height: imgHeight, Depth: 1 },
 			},
 			&llgl.ImageView{
 				Format:		llgl.ImageFormatRGBA,
