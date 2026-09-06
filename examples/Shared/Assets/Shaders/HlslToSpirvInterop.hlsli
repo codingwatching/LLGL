@@ -26,6 +26,10 @@ column_major float4x3 UnpackRowMajor3x4Matrix(float4 row0, float4 row1, float4 r
 #define MAT3x4_MUL(MAT, VEC) \
     mul(VEC, UnpackRowMajor3x4Matrix(MAT##Row0, MAT##Row1, MAT##Row2))
 
+// Performs a multiplication with a matrix from a vertex input attribute.
+#define VERTEX_ATTRIB_MUL(A, B) \
+    mul((B), (A))
+
 #else // __spirv__
 
 #define DECLARE_MAT3x4(MAT) \
@@ -33,6 +37,10 @@ column_major float4x3 UnpackRowMajor3x4Matrix(float4 row0, float4 row1, float4 r
 
 #define MAT3x4_MUL(MAT, VEC) \
     mul(MAT, VEC)
+
+// Performs a multiplication with a matrix from a vertex input attribute.
+#define VERTEX_ATTRIB_MUL(A, B) \
+    mul((A), (B))
 
 #endif // /__spirv__
 
